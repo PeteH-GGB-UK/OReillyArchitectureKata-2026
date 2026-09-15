@@ -28,6 +28,7 @@ The central architectural thesis is deliberately conservative about AI: models c
 | Reasoning, alternatives and consequences | The **Architectural decision records** section in each capability submission and [ADR template](adrs/adr-00-Template.md) |
 | Requirement-to-architecture traceability | The **Traceability summary** section in each capability submission |
 | Deliverable sequencing and early value | The **Delivery sequence and conclusion** section in each capability submission |
+| AI innovation assessment and enhancement proposals | [AI innovation assessment](requirements/AI_Innovation_Assessment_and_Enhancements.md) |
 | Judging criteria and submission priorities | [Judging rubric summary](requirements/Architecture_Kata_Judging_Rubric_Summary.md) and [submission priorities](requirements/Architecture_Kata_Submission_Priorities.md) |
 
 ## Outcomes and success measures
