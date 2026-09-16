@@ -1,14 +1,14 @@
-**VON DIGITALIS ESTATES**
-
-Crowd & Site Operations
+# Crowd & Site Operations
 
 Architecture Kata Capability Submission
 
-| **ARCHITECTURE THESIS  **A resilient event-driven platform turns distributed occupancy, throughput and operational signals into reliable queue estimates, staff tasks and park-wide awareness. AI forecasts demand and recommends responses; duty managers retain control. | | --- |
+| **ARCHITECTURE THESIS** | A resilient event-driven platform turns distributed occupancy, throughput and operational signals into reliable queue estimates, staff tasks and park-wide awareness. AI forecasts demand and recommends responses; duty managers retain control. |
+| --- | --- |
 
 ## Submission focus
 
-| **Outcome** | **Design response** | | --- | --- |
+| **Outcome** | **Design response** |
+| --- | --- |
 | Improve visitor flow | Near-real-time occupancy, queue estimates and approved guidance. |
 | Understand popularity | Comparable attraction and zone utilisation analytics. |
 | Coordinate operations | Shared incidents, tasks and staffing signals. |
@@ -22,7 +22,8 @@ The brief asks the estate to understand how popular different parts of the park 
 
 Crowd pressure and poor visibility of site conditions reduce visitor satisfaction and complicate staffing. The capability provides a consistent view of occupancy, queues, attraction availability and operational incidents, while continuing to collect observations through connectivity disruption.
 
-| **CORE BOUNDARY  **Edge devices observe occupancy and throughput. The Crowd & Site Operations Platform owns queue estimates, operational state, response workflows and published site guidance. | | --- |
+| **CORE BOUNDARY** | Edge devices observe occupancy and throughput. The Crowd & Site Operations Platform owns queue estimates, operational state, response workflows and published site guidance. |
+| --- | --- |
 
 ## Design principles
 
@@ -38,7 +39,8 @@ AI remains advisory and falls back to deterministic rules and operator judgement
 
 ## Capability scope
 
-| **Capability** | **Responsibilities** | | --- | --- |
+| **Capability** | **Responsibilities** |
+| --- | --- |
 | Occupancy and queue estimation | Ingest counters and sensors; calculate quality-rated wait-time estimates. |
 | Site status management | Track attraction, zone and facility availability and restrictions. |
 | Operations workflow | Create, assign, escalate and close incidents and staff tasks. |
@@ -51,7 +53,8 @@ Figure 1. C2 containers for crowd sensing, queue estimation, operations workflow
 
 ![Crowd_and_Site_Operations_C4_Capability-image-01.png](Crowd_and_Site_Operations_C4_Capability-assets/Crowd_and_Site_Operations_C4_Capability-image-01.png)
 
-| **ARCHITECTURAL INTENT  **Separates raw observations, estimated queues, operational authority and public guidance. | | --- |
+| **ARCHITECTURAL INTENT** | Separates raw observations, estimated queues, operational authority and public guidance. |
+| --- | --- |
 
 # 3. C4 Level 3: critical service components
 
@@ -59,7 +62,8 @@ Figure 2. C3 components within the Queue Estimation Service.
 
 ![Crowd_and_Site_Operations_C4_Capability-image-02.png](Crowd_and_Site_Operations_C4_Capability-assets/Crowd_and_Site_Operations_C4_Capability-image-02.png)
 
-| **ARCHITECTURAL INTENT  **Makes count validation, estimation and confidence policy independently testable. | | --- |
+| **ARCHITECTURAL INTENT** | Makes count validation, estimation and confidence policy independently testable. |
+| --- | --- |
 
 # 4. Deployment and resilience view
 
@@ -67,7 +71,8 @@ Figure 3. Zoned collection and buffering for anonymous site observations.
 
 ![Crowd_and_Site_Operations_C4_Capability-image-03.png](Crowd_and_Site_Operations_C4_Capability-assets/Crowd_and_Site_Operations_C4_Capability-image-03.png)
 
-| **ARCHITECTURAL INTENT  **Supports the brief’s patchy-connectivity constraint without presenting stale observations as current. | | --- |
+| **ARCHITECTURAL INTENT** | Supports the brief’s patchy-connectivity constraint without presenting stale observations as current. |
+| --- | --- |
 
 # 5. Dynamic view: critical journey
 
@@ -75,13 +80,15 @@ Figure 4. Crowd pressure progresses from observation to approved operational res
 
 ![Crowd_and_Site_Operations_C4_Capability-image-04.png](Crowd_and_Site_Operations_C4_Capability-assets/Crowd_and_Site_Operations_C4_Capability-image-04.png)
 
-| **ARCHITECTURAL INTENT  **Combines deterministic estimates and advisory forecasting with accountable duty-manager decisions. | | --- |
+| **ARCHITECTURAL INTENT** | Combines deterministic estimates and advisory forecasting with accountable duty-manager decisions. |
+| --- | --- |
 
 # 6. AI strategy and guardrails
 
 AI is used for bounded demand forecasting and recommendation ranking, not for emergency command or autonomous crowd control.
 
-| **Business need** | **AI capability** | **Required human control** | | --- | --- | --- |
+| **Business need** | **AI capability** | **Required human control** |
+| --- | --- | --- |
 | Anticipate pressure | Short-horizon demand forecast by zone and attraction. | Duty manager approves response. |
 | Improve alternatives | Rank suitable attractions using status, capacity and predicted demand. | Operations approves published guidance. |
 | Find emerging patterns | Anomaly detection across occupancy and throughput. | Operator investigates data and conditions. |
@@ -89,7 +96,8 @@ AI is used for bounded demand forecasting and recommendation ranking, not for em
 
 ## Guardrails
 
-| **AI may** | **AI may not** | | --- | --- |
+| **AI may** | **AI may not** |
+| --- | --- |
 | Forecast demand and rank options. | Issue emergency instructions autonomously. |
 | Flag sensor anomalies and stale estimates. | Identify or track individuals. |
 | Recommend staffing or message changes. | Close zones or publish unapproved guidance. |
@@ -109,25 +117,21 @@ Retain versioned model contracts, evidence and outcome feedback independently of
 
 These concise ADRs capture the decisions that most strongly shape the capability.
 
-| **ID / decision** | **Context** | **Decision** | **Consequence** | | --- | --- | --- | --- |
-| ADR-CS-01  
-Anonymous counting by default | Popularity insight does not require personal identity. | Use counts and throughput; prohibit biometric identity processing. | Reduces privacy risk; limits individual-level analysis. |
-| ADR-CS-02  
-Queue estimates are derived state | Sensors provide observations, not authoritative waiting time. | Calculate estimates with confidence and freshness metadata. | Supports quality-aware guidance; requires calibration. |
-| ADR-CS-03  
-Edge-first ingestion | Connectivity is patchy. | Use zoned gateways with buffer, replay and device health. | Preserves observations; adds managed hardware. |
-| ADR-CS-04  
-Event-driven integration | Ride and site status change independently. | Exchange curated events through the estate backbone. | Loose coupling; requires contract governance. |
-| ADR-CS-05  
-AI is advisory | Forecasts can be wrong during unusual conditions. | Require duty-manager approval for consequential actions. | Maintains accountability; limits automation. |
-| ADR-CS-06  
-Separate operational and public views | Internal incidents may contain sensitive detail. | Publish sanitised status and guidance projections. | Protects data; requires projection logic. |
+| **ID / decision** | **Context** | **Decision** | **Consequence** |
+| --- | --- | --- | --- |
+| ADR-CS-01<br>Anonymous counting by default | Popularity insight does not require personal identity. | Use counts and throughput; prohibit biometric identity processing. | Reduces privacy risk; limits individual-level analysis. |
+| ADR-CS-02<br>Queue estimates are derived state | Sensors provide observations, not authoritative waiting time. | Calculate estimates with confidence and freshness metadata. | Supports quality-aware guidance; requires calibration. |
+| ADR-CS-03<br>Edge-first ingestion | Connectivity is patchy. | Use zoned gateways with buffer, replay and device health. | Preserves observations; adds managed hardware. |
+| ADR-CS-04<br>Event-driven integration | Ride and site status change independently. | Exchange curated events through the estate backbone. | Loose coupling; requires contract governance. |
+| ADR-CS-05<br>AI is advisory | Forecasts can be wrong during unusual conditions. | Require duty-manager approval for consequential actions. | Maintains accountability; limits automation. |
+| ADR-CS-06<br>Separate operational and public views | Internal incidents may contain sensitive detail. | Publish sanitised status and guidance projections. | Protects data; requires projection logic. |
 
 # 8. Architecture fitness functions
 
 Targets are proposed starting points and require validation against operational baselines.
 
-| **ID** | **Fitness function** | **Proposed success measure** | **Evidence** | | --- | --- | --- | --- |
+| **ID** | **Fitness function** | **Proposed success measure** | **Evidence** |
+| --- | --- | --- | --- |
 | FF-CS-01 | Queue estimate accuracy | Median absolute error within an agreed threshold after calibration. | Manual sample comparison. |
 | FF-CS-02 | Estimate freshness | At least 99% of published estimates carry current freshness and confidence metadata. | Schema and dashboard check. |
 | FF-CS-03 | Telemetry durability | Less than 0.1% loss in a simulated 24-hour backhaul outage. | Quarterly resilience test. |
@@ -141,7 +145,8 @@ Targets are proposed starting points and require validation against operational 
 
 ## Traceability summary
 
-| **Outcome** | **Architecture response** | **ADRs** | **Fitness functions** | | --- | --- | --- | --- |
+| **Outcome** | **Architecture response** | **ADRs** | **Fitness functions** |
+| --- | --- | --- | --- |
 | Visitor flow | Queue estimates and approved guidance | 01, 02, 06 | 01, 02, 04 |
 | Resilient operation | Zoned gateways and replay | 03 | 03, 10 |
 | Safe AI | Advisory forecasts and approval | 05 | 07, 08 |
@@ -150,13 +155,15 @@ Targets are proposed starting points and require validation against operational 
 
 # 9. Delivery sequence and conclusion
 
-| **Phase** | **Scope** | **Value** | | --- | --- | --- |
+| **Phase** | **Scope** | **Value** |
+| --- | --- | --- |
 | 1. Operations foundation | Site status, incidents, staff tasks and basic counters. | Creates accountable operating data. |
 | 2. Queue visibility | Calibrated estimates, freshness and public guidance. | Improves visitor flow decisions. |
 | 3. Governed forecasting | Demand models, evaluation and recommendation feedback. | Supports earlier intervention. |
 | 4. Estate optimisation | Cross-domain staffing, ride and visitor analytics. | Improves estate-wide coordination. |
 
-| **FINAL POSITION  **The design makes queue information useful without confusing raw sensor readings with truth. Privacy-preserving observations, resilient ingestion and human-approved guidance connect site conditions to park operations. | | --- |
+| **FINAL POSITION** | The design makes queue information useful without confusing raw sensor readings with truth. Privacy-preserving observations, resilient ingestion and human-approved guidance connect site conditions to park operations. |
+| --- | --- |
 
 ## Source basis
 

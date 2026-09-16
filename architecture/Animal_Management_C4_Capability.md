@@ -1,15 +1,14 @@
-**VON DIGITALIS ESTATES**
-
-Animal Care &  
-Welfare Management
+# Animal Care & Welfare Management
 
 Architecture Kata Submission Section
 
-| **ARCHITECTURE THESIS  **A resilient, event-driven Animal Care Platform combines keeper expertise, edge telemetry and governed AI to improve welfare and estate operations. AI augments decisions; qualified humans retain accountability. | | --- |
+| **ARCHITECTURE THESIS** | A resilient, event-driven Animal Care Platform combines keeper expertise, edge telemetry and governed AI to improve welfare and estate operations. AI augments decisions; qualified humans retain accountability. |
+| --- | --- |
 
 ## Submission focus
 
-| **Outcome** | **Design response** | | --- | --- |
+| **Outcome** | **Design response** |
+| --- | --- |
 | Protect animal welfare | Local deterministic alerting, accountable workflows and full audit history. |
 | Operate through connectivity loss | Zoned gateways with local processing and durable store-and-forward. |
 | Detect issues earlier | Explainable anomaly detection and forecasting, supported by human review. |
@@ -23,7 +22,8 @@ The original brief specifies more than 200 animals across 55 displays and enclos
 
 Animal illness, missed care activities and enclosure disruption increase cost and can damage visitor confidence. The proposed capability gives keepers and veterinary staff a reliable operational record of animal health, feeding, husbandry, population and enclosure conditions, while sharing only the minimum operational information needed by the wider park.
 
-| **CORE BOUNDARY  **MQTT transports telemetry and events. The Animal Care Platform owns welfare records, workflows and accountability. | | --- |
+| **CORE BOUNDARY** | MQTT transports telemetry and events. The Animal Care Platform owns welfare records, workflows and accountability. |
+| --- | --- |
 
 ## Design principles
 
@@ -39,7 +39,8 @@ Evolvable AI: model interfaces, evaluation assets and audit history remain provi
 
 ## Capability scope
 
-| **Capability** | **Responsibilities** | | --- | --- |
+| **Capability** | **Responsibilities** |
+| --- | --- |
 | Animal and population records | Animal identity, cohorts, enclosure assignment, movement and verified population counts. |
 | Health and veterinary | Observations, examinations, treatment records, follow-up tasks and controlled access. |
 | Feeding and husbandry | Care schedules, feed offered and consumed, cleaning, enrichment and exceptions. |
@@ -52,7 +53,8 @@ Figure 1. The Animal Care Platform is the welfare system of record; other estate
 
 ![Animal_Management_C4_Capability-image-01.png](Animal_Management_C4_Capability-assets/Animal_Management_C4_Capability-image-01.png)
 
-| **ARCHITECTURAL INTENT  **This boundary protects clinical and husbandry data while allowing operations, maintenance, workforce planning and analytics to respond to approved operational changes. | | --- |
+| **ARCHITECTURAL INTENT** | This boundary protects clinical and husbandry data while allowing operations, maintenance, workforce planning and analytics to respond to approved operational changes. |
+| --- | --- |
 
 # 3. C4 Level 3: critical service components
 
@@ -60,7 +62,8 @@ Figure 2. Component view of the Health Workflow Service.
 
 ![Animal_Management_C4_Capability-image-02.png](Animal_Management_C4_Capability-assets/Animal_Management_C4_Capability-image-02.png)
 
-| **ARCHITECTURAL INTENT  **Separates deterministic threshold evaluation, AI orchestration, human investigation workflow and auditable evidence. | | --- |
+| **ARCHITECTURAL INTENT** | Separates deterministic threshold evaluation, AI orchestration, human investigation workflow and auditable evidence. |
+| --- | --- |
 
 # 4. Deployment and resilience view
 
@@ -68,7 +71,8 @@ Figure 3. Zoned gateways provide local processing, alerting and store-and-forwar
 
 ![Animal_Management_C4_Capability-image-03.png](Animal_Management_C4_Capability-assets/Animal_Management_C4_Capability-image-03.png)
 
-| **ARCHITECTURAL INTENT  **Critical thresholds are evaluated locally. Routine telemetry is buffered and synchronised when connectivity returns. Cloud AI is never in the critical alarm path. | | --- |
+| **ARCHITECTURAL INTENT** | Critical thresholds are evaluated locally. Routine telemetry is buffered and synchronised when connectivity returns. Cloud AI is never in the critical alarm path. |
+| --- | --- |
 
 # 5. Dynamic view: critical welfare journey
 
@@ -76,13 +80,15 @@ Figure 4. A welfare event moves from deterministic local detection to evidence-b
 
 ![Animal_Management_C4_Capability-image-04.png](Animal_Management_C4_Capability-assets/Animal_Management_C4_Capability-image-04.png)
 
-| **ARCHITECTURAL INTENT  **AI may identify trends and prioritise investigation. It cannot diagnose, prescribe, suppress an alarm, or authorise treatment or enclosure actions. | | --- |
+| **ARCHITECTURAL INTENT** | AI may identify trends and prioritise investigation. It cannot diagnose, prescribe, suppress an alarm, or authorise treatment or enclosure actions. |
+| --- | --- |
 
 # 6. AI strategy and guardrails
 
 AI is applied to bounded problems where its performance can be evaluated and where failure does not bypass deterministic controls or accountable staff.
 
-| **Business need** | **AI capability** | **Required human control** | | --- | --- | --- |
+| **Business need** | **AI capability** | **Required human control** |
+| --- | --- | --- |
 | Earlier indication of illness | Multivariate anomaly detection across feeding, activity, history and environment. | Keeper investigation and veterinary interpretation. |
 | Aquatic population monitoring | Computer vision population estimate with confidence and evidence. | Manual verification before the authoritative count changes. |
 | Environmental risk | Time-series forecasting of deteriorating enclosure conditions. | Keeper assesses conditions and selects action. |
@@ -90,7 +96,8 @@ AI is applied to bounded problems where its performance can be evaluated and whe
 
 ## Guardrails
 
-| **AI may** | **AI may not** | | --- | --- |
+| **AI may** | **AI may not** |
+| --- | --- |
 | Detect anomalies and forecast trends. | Diagnose an animal or prescribe treatment. |
 | Summarise records and retrieve approved guidance. | Override or suppress deterministic alarms. |
 | Create a reviewable investigation recommendation. | Modify welfare plans or operate life-support equipment. |
@@ -110,25 +117,21 @@ Invoke models through versioned internal contracts so providers can be replaced 
 
 The following concise ADRs capture the decisions that most strongly shape the capability. Full ADRs can be maintained separately if the submission repository requires deeper alternatives and enforcement detail.
 
-| **ID / decision** | **Context** | **Decision** | **Consequence** | | --- | --- | --- | --- |
-| ADR-AC-01  
-Animal Care Platform as system of record | Welfare data originates from devices and people. | Own health, husbandry, feeding, population and incident records in the Animal Care Platform. | Clear ownership and auditability; requires integration from telemetry and estate systems. |
-| ADR-AC-02  
-Edge-first resilience | Connectivity is unreliable and welfare monitoring cannot depend on the cloud. | Use zoned gateways with local thresholds, alarms and encrypted store-and-forward. | Continues protection during outages; adds managed estate hardware. |
-| ADR-AC-03  
-Event-driven estate integration | Operations, maintenance and workforce services need animal-care impacts. | Publish curated domain events through the Estate Event Platform. | Loose coupling and independent evolution; requires event-contract governance. |
-| ADR-AC-04  
-AI is advisory only | Welfare decisions carry ethical, operational and reputational consequences. | AI can recommend investigation but cannot diagnose, prescribe or authorise action. | Preserves accountability; deliberately limits automation. |
-| ADR-AC-05  
-Specialised AI by risk profile | Detection and generative assistance have different failure modes. | Use conventional ML or vision for bounded detection; use GenAI only for cited retrieval and summarisation. | Improves evaluability and reduces hallucination exposure; operates multiple model types. |
-| ADR-AC-06  
-Provider-neutral inference boundary | AI models, providers and commercial terms will change. | Use versioned internal model contracts and retain evaluation assets independently. | Improves replaceability; introduces an abstraction and compatibility-testing burden. |
+| **ID / decision** | **Context** | **Decision** | **Consequence** |
+| --- | --- | --- | --- |
+| ADR-AC-01<br>Animal Care Platform as system of record | Welfare data originates from devices and people. | Own health, husbandry, feeding, population and incident records in the Animal Care Platform. | Clear ownership and auditability; requires integration from telemetry and estate systems. |
+| ADR-AC-02<br>Edge-first resilience | Connectivity is unreliable and welfare monitoring cannot depend on the cloud. | Use zoned gateways with local thresholds, alarms and encrypted store-and-forward. | Continues protection during outages; adds managed estate hardware. |
+| ADR-AC-03<br>Event-driven estate integration | Operations, maintenance and workforce services need animal-care impacts. | Publish curated domain events through the Estate Event Platform. | Loose coupling and independent evolution; requires event-contract governance. |
+| ADR-AC-04<br>AI is advisory only | Welfare decisions carry ethical, operational and reputational consequences. | AI can recommend investigation but cannot diagnose, prescribe or authorise action. | Preserves accountability; deliberately limits automation. |
+| ADR-AC-05<br>Specialised AI by risk profile | Detection and generative assistance have different failure modes. | Use conventional ML or vision for bounded detection; use GenAI only for cited retrieval and summarisation. | Improves evaluability and reduces hallucination exposure; operates multiple model types. |
+| ADR-AC-06<br>Provider-neutral inference boundary | AI models, providers and commercial terms will change. | Use versioned internal model contracts and retain evaluation assets independently. | Improves replaceability; introduces an abstraction and compatibility-testing burden. |
 
 # 8. Architecture fitness functions
 
 These are measurable, automatable where possible, and traceable to welfare, resilience, AI governance and integration outcomes. Targets are proposed starting points, not facts from the brief.
 
-| **ID** | **Fitness function** | **Proposed success measure** | **Evidence** | | --- | --- | --- | --- |
+| **ID** | **Fitness function** | **Proposed success measure** | **Evidence** |
+| --- | --- | --- | --- |
 | FF-01 | Critical alert latency | At least 99.9% raised locally within 30 seconds of a confirmed threshold breach. | Gateway simulation and alert log. |
 | FF-02 | Alert acknowledgement | At least 95% of critical alerts acknowledged within 5 minutes. | Workflow telemetry. |
 | FF-03 | Telemetry durability | Less than 0.1% loss during a simulated 24-hour backhaul outage. | Quarterly resilience test. |
@@ -142,7 +145,8 @@ These are measurable, automatable where possible, and traceable to welfare, resi
 
 ## Traceability summary
 
-| **Outcome** | **Architecture response** | **ADRs** | **Fitness functions** | | --- | --- | --- | --- |
+| **Outcome** | **Architecture response** | **ADRs** | **Fitness functions** |
+| --- | --- | --- | --- |
 | Protect welfare | Local alerts, accountable workflow, authoritative records | 01, 02, 04 | 01, 02, 05 |
 | Resilient operation | Zoned edge gateways and store-and-forward | 02 | 03, 04 |
 | Useful, safe AI | Bounded ML, human review and provider-neutral contracts | 04, 05, 06 | 07, 08, 09 |
@@ -150,13 +154,15 @@ These are measurable, automatable where possible, and traceable to welfare, resi
 
 # 9. Delivery sequence and conclusion
 
-| **Phase** | **Scope** | **Value** | | --- | --- | --- |
+| **Phase** | **Scope** | **Value** |
+| --- | --- | --- |
 | 1. Digital care foundation | Animal, cohort and enclosure register; keeper tasks; feeding, health and audit workflows. | Creates accountable, authoritative operational records. |
 | 2. Resilient telemetry | Priority sensors, zoned gateways, local alarms, central telemetry and maintenance integration. | Improves environmental visibility without cloud dependency. |
 | 3. Governed intelligence | Anomaly detection, selected population counting, evaluation, drift monitoring and feedback. | Provides earlier warnings while retaining human control. |
 | 4. Estate optimisation | Workforce and supply forecasts, approved enclosure status and cross-domain analytics. | Connects welfare outcomes with wider park planning and visitor operations. |
 
-| **FINAL POSITION  **The architecture prioritises welfare, resilience and accountability. It uses AI where outputs can be evaluated and reviewed, while deterministic local controls and qualified staff remain responsible for consequential decisions. | | --- |
+| **FINAL POSITION** | The architecture prioritises welfare, resilience and accountability. It uses AI where outputs can be evaluated and reviewed, while deterministic local controls and qualified staff remain responsible for consequential decisions. |
+| --- | --- |
 
 ## Source basis
 

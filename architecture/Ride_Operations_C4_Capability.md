@@ -1,7 +1,4 @@
-**VON DIGITALIS ESTATES**
-
-Ride Operations &  
-Asset Reliability
+# Ride Operations & Asset Reliability
 
 Architecture Kata Submission Section
 
