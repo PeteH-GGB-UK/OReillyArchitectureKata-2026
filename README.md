@@ -1,6 +1,6 @@
 # O'Reilly Architectural Katas 2026: AI-Assisted Software Architecture - Von Digitalis Estates
 
-This is the submission for the team **Mostly Autonomous**. It proposes a resilient, event-driven architecture that uses practical, governed AI to make the estate more profitable while protecting visitor trust, animal welfare and ride safety.
+This is the submission for the team **Mostly Autonomous - The Parkitects**. It proposes a resilient, event-driven architecture that uses practical, governed AI to make the estate more profitable while protecting visitor trust, animal welfare and ride safety.
 
 <img width="1312" height="1199" alt="image" src="https://github.com/user-attachments/assets/d6cc5b68-ea17-459a-ab1b-2a0c5b4c413a" />
 
