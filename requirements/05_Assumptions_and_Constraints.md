@@ -1,7 +1,5 @@
 # Assumptions and Constraints
 
-Estate-wide assumptions underpinning the proposed architecture, followed by constraints that restrict its design. Assumptions are working premises, not confirmed facts. Constraints distinguish external limits from boundaries imposed by the proposed architecture.
-
 ## Assumptions
 
 ### Infrastructure and Integration

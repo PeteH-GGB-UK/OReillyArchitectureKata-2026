@@ -1,7 +1,5 @@
 # Functional Requirements
 
-Proposed estate-wide requirements drawn from the official brief and the team's architecture documents and discussions. Technology choices and AI uses are proposals, not confirmed selections.
-
 Site Operations covers day-to-day operational workflows and coordination. Estate Management covers strategic performance, investment and long-term planning. Both areas are listed where a requirement directly supports both responsibilities.
 
 | Area of application | Requirement | Functional requirement description | Data required | Data output | Technology choices and AI opportunities | Comments |

@@ -1,20 +1,15 @@
 # Non-Functional Requirements
 
-Estate-wide quality requirements, grouped for architectural review. Requirements are numbered sequentially in document order.
-
 ## Target Status and Measurement Rules
 
-All thresholds below are acceptance criteria for team review, not agreed commitments or measured results. The brief's growth ambition is approximately 5,000 to 15,000 daily visitors; it does not specify concurrent users, sensor rates or service levels.
+The brief's growth ambition is approximately 5,000 to 15,000 daily visitors; it does not specify concurrent users, sensor rates or service levels.
 
-- Before acceptance, each requirement needs a named owner, an approved target and recorded verification evidence. Suggested owner roles appear below.
-- Define a versioned workload profile for 15,000 daily visitors, including peak arrival rate, concurrent sessions, transaction mix, device count, event rate and payload sizes. Daily attendance alone is not a load-test specification.
-- Define operating hours, service boundaries, observation windows and exclusions before measuring availability or response times. Report external dependency delays separately without hiding their effect on users.
-- Test offline, reconnecting and degraded conditions as well as normal operation. Local admission decisions, buffered staff records and central services are distinct measurement boundaries.
-- Open thresholds are explicitly identified below. They must be agreed before the relevant capability is accepted; they are not assumed to have passed.
+Define a versioned workload profile for 15,000 daily visitors, including peak arrival rate, concurrent sessions, transaction mix, device count, event rate and payload sizes. Daily attendance alone is not a load-test specification.
+Define operating hours, service boundaries, observation windows and exclusions before measuring availability or response times. Report external dependency delays separately without hiding their effect on users.
+Test offline, reconnecting and degraded conditions as well as normal operation. Local admission decisions, buffered staff records and central services are distinct measurement boundaries.
+Open thresholds are explicitly identified below. They must be agreed before the relevant capability is accepted; they are not assumed to have passed. 
 
 ## 1. Performance and Capacity
-
-Suggested owners: platform engineering and estate operations.
 
 | ID / Requirement | Operating Condition | Threshold / Acceptance Criteria | Verification Method |
 |---|---|---|---|
@@ -22,8 +17,6 @@ Suggested owners: platform engineering and estate operations.
 | NFR-02 — Performance | Approved peak load; online services healthy and supported devices connected. | p95 local admission decision ≤2 seconds; p95 ordinary read/write API response ≤2 seconds; p95 purchase confirmation ≤5 seconds after payment authorisation is received. | Instrument end-to-end journeys and run load tests; report payment-provider latency separately. |
 
 ## 2. Availability, Resilience and Recovery
-
-Suggested owners: platform operations and capability owners.
 
 | ID / Requirement | Operating Condition | Threshold / Acceptance Criteria | Verification Method |
 |---|---|---|---|
@@ -34,15 +27,11 @@ Suggested owners: platform operations and capability owners.
 
 ## 3. Safety and Operational Assurance
 
-Suggested owners: ride engineering, animal-care lead and duty management.
-
 | ID / Requirement | Operating Condition | Threshold / Acceptance Criteria | Verification Method |
 |---|---|---|---|
 | NFR-07 — Safety independence | Cloud, network or AI unavailable, delayed or producing invalid output. | No dependency of certified ride controls or essential local welfare alarms on cloud/AI; no unauthorised return to service. Raise ≥99.9% of tested local welfare alerts within 30 seconds of a confirmed threshold breach, where the care plan permits that interval. | Review control boundaries with qualified staff; inject failures in a safe test environment and verify alarms and approval gates. More urgent hazards require separate assessment and faster limits. |
 
 ## 4. Security, Privacy and Compliance
-
-Suggested owners: security/privacy lead and business process owners.
 
 | ID / Requirement | Operating Condition | Threshold / Acceptance Criteria | Verification Method |
 |---|---|---|---|
@@ -54,8 +43,6 @@ Suggested owners: security/privacy lead and business process owners.
 
 ## 5. Data Quality and Integrity
 
-Suggested owners: domain data owners and integration engineering.
-
 | ID / Requirement | Operating Condition | Threshold / Acceptance Criteria | Verification Method |
 |---|---|---|---|
 | NFR-13 — Data quality and freshness | Operational data published internally or to visitors. | Every status or estimate includes observation time and validity/quality metadata. Withdraw live queue estimates after five minutes without valid observations; show ride status as unconfirmed after two minutes. Other limits require domain approval. | Inject missing, invalid and delayed observations; verify API and user-interface behaviour at each expiry boundary. |
@@ -63,8 +50,6 @@ Suggested owners: domain data owners and integration engineering.
 | NFR-15 — Data provenance | Observations, estimates and corrections used in operational decisions. | Every such record retains source identity, observation and ingestion times, transformation/version reference and correction history; estimates are distinguishable from verified observations. | Trace sampled dashboard values and decisions back to source records; test corrections and reprocessing. |
 
 ## 6. Operability and Cost
-
-Suggested owners: platform operations, field engineering and finance.
 
 | ID / Requirement | Operating Condition | Threshold / Acceptance Criteria | Verification Method |
 |---|---|---|---|
@@ -76,8 +61,6 @@ Suggested owners: platform operations, field engineering and finance.
 
 ## 7. Maintainability and Integration
 
-Suggested owners: architecture and engineering leads.
-
 | ID / Requirement | Operating Condition | Threshold / Acceptance Criteria | Verification Method |
 |---|---|---|---|
 | NFR-21 — Maintainability | Representative changes to domain rules, implementation or integrations. | Demonstrate that an internal domain change can be released without changing unrelated domains when published contracts remain compatible; maintain an accountable owner for every component. | Rehearse a representative change and review dependency impact, deployment requirements and ownership. |
@@ -85,8 +68,6 @@ Suggested owners: architecture and engineering leads.
 | NFR-23 — Testability | Release acceptance and material architecture/model changes. | Every critical continuity, recovery, approval and AI-fallback scenario has a repeatable test, approved expected outcome and retained result; no untested critical scenario is accepted. | Execute the scenario suite in a representative environment, supplemented by controlled field drills; record environment limitations. |
 
 ## 8. AI Quality and Governance
-
-Suggested owners: AI/data lead, security lead and relevant domain owner.
 
 | ID / Requirement | Operating Condition | Threshold / Acceptance Criteria | Verification Method |
 |---|---|---|---|
@@ -100,8 +81,6 @@ Suggested owners: AI/data lead, security lead and relevant domain owner.
 | NFR-31 — AI security | Untrusted prompts, retrieved content and model-initiated tool calls. | No unauthorised tool execution or restricted-data disclosure in the approved adversarial test suite; tool permissions are enforced independently of model output. | Prompt-injection, retrieval-access and tool-abuse tests; review failures before promotion and repeat after material changes. |
 
 ## 9. Usability and Accessibility
-
-Suggested owners: product/design, visitor services and staff representatives.
 
 | ID / Requirement | Operating Condition | Threshold / Acceptance Criteria | Verification Method |
 |---|---|---|---|

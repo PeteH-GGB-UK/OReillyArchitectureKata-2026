@@ -1,6 +1,6 @@
 # Risks and Mitigations
 
-Estate-wide risks covering Visitor Journey and Growth, Crowd and Site Operations, Ride Operations, Animal Care and Welfare, and the shared platform. Controls described in the architecture are proposed, not implemented assurances; numerical acceptance targets remain subject to review and validation.
+Estate-wide risks covering Visitor Journey and Growth, Crowd and Site Operations, Ride Operations, Animal Care and Welfare, and the shared platform. 
 
 Risk areas follow the areas of application in Functional_Requirements.md and identify the functions directly affected, rather than general oversight or downstream consequences. “All” denotes risks affecting all four areas.
 
