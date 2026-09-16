@@ -80,7 +80,7 @@ The common controls are:
 
 ## Architecture decisions and trade-offs
 
-This section remains relevant because the major design choices now live as standalone ADRs. They make the cost of change, rejected alternatives, verification approach and revisit triggers explicit rather than leaving trade-offs embedded only in the capability narratives.
+The major design choices live as standalone ADRs. They make the cost of change, rejected alternatives, verification approach and revisit triggers explicit rather than leaving trade-offs embedded only in the capability narratives.
 
 The current ADR set is:
 
