@@ -107,7 +107,7 @@ Important trade-offs made visible in the architecture include:
 
 ## Delivery and operational proof
 
-This section remains relevant as the operational proof path for the architecture. The proposed sequence starts with authoritative records, ticketing, consent, inspections, care workflows, site status and observability. It then adds resilient telemetry and queue visibility, followed by governed predictive capabilities and finally cross-estate optimisation, personalisation and carefully bounded conversational assistance.
+The proposed sequence starts with authoritative records, ticketing, consent, inspections, care workflows, site status and observability. It then adds resilient telemetry and queue visibility, followed by governed predictive capabilities and finally cross-estate optimisation, personalisation and carefully bounded conversational assistance.
 
 The architecture is intended to be judged by measurable fitness functions rather than by its technology inventory. Representative controls include purchase and entry availability, entitlement integrity, queue estimate accuracy and freshness, ride availability, maintenance lead time, mandatory-care completion, alert acknowledgement, telemetry durability, event delivery, privacy contract tests, AI evidence/drift checks and analytical traceability.
 
