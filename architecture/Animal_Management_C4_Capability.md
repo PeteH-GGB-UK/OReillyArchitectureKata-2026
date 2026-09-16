@@ -2,8 +2,7 @@
 
 Architecture Kata Submission Section
 
-| **ARCHITECTURE THESIS** | A resilient, event-driven Animal Care Platform combines keeper expertise, edge telemetry and governed AI to improve welfare and estate operations. AI augments decisions; qualified humans retain accountability. |
-| --- | --- |
+> **ARCHITECTURE THESIS** — A resilient, event-driven Animal Care Platform combines keeper expertise, edge telemetry and governed AI to improve welfare and estate operations. AI augments decisions; qualified humans retain accountability.
 
 ## Submission focus
 
@@ -22,8 +21,7 @@ The original brief specifies more than 200 animals across 55 displays and enclos
 
 Animal illness, missed care activities and enclosure disruption increase cost and can damage visitor confidence. The proposed capability gives keepers and veterinary staff a reliable operational record of animal health, feeding, husbandry, population and enclosure conditions, while sharing only the minimum operational information needed by the wider park.
 
-| **CORE BOUNDARY** | MQTT transports telemetry and events. The Animal Care Platform owns welfare records, workflows and accountability. |
-| --- | --- |
+> **CORE BOUNDARY** — MQTT transports telemetry and events. The Animal Care Platform owns welfare records, workflows and accountability.
 
 ## Design principles
 
@@ -53,8 +51,7 @@ Figure 1. The Animal Care Platform is the welfare system of record; other estate
 
 ![Animal_Management_C4_Capability-image-01.png](Animal_Management_C4_Capability-assets/Animal_Management_C4_Capability-image-01.png)
 
-| **ARCHITECTURAL INTENT** | This boundary protects clinical and husbandry data while allowing operations, maintenance, workforce planning and analytics to respond to approved operational changes. |
-| --- | --- |
+> **ARCHITECTURAL INTENT** — This boundary protects clinical and husbandry data while allowing operations, maintenance, workforce planning and analytics to respond to approved operational changes.
 
 # 3. C4 Level 3: critical service components
 
@@ -62,8 +59,7 @@ Figure 2. Component view of the Health Workflow Service.
 
 ![Animal_Management_C4_Capability-image-02.png](Animal_Management_C4_Capability-assets/Animal_Management_C4_Capability-image-02.png)
 
-| **ARCHITECTURAL INTENT** | Separates deterministic threshold evaluation, AI orchestration, human investigation workflow and auditable evidence. |
-| --- | --- |
+> **ARCHITECTURAL INTENT** — Separates deterministic threshold evaluation, AI orchestration, human investigation workflow and auditable evidence.
 
 # 4. Deployment and resilience view
 
@@ -71,8 +67,7 @@ Figure 3. Zoned gateways provide local processing, alerting and store-and-forwar
 
 ![Animal_Management_C4_Capability-image-03.png](Animal_Management_C4_Capability-assets/Animal_Management_C4_Capability-image-03.png)
 
-| **ARCHITECTURAL INTENT** | Critical thresholds are evaluated locally. Routine telemetry is buffered and synchronised when connectivity returns. Cloud AI is never in the critical alarm path. |
-| --- | --- |
+> **ARCHITECTURAL INTENT** — Critical thresholds are evaluated locally. Routine telemetry is buffered and synchronised when connectivity returns. Cloud AI is never in the critical alarm path.
 
 # 5. Dynamic view: critical welfare journey
 
@@ -80,8 +75,7 @@ Figure 4. A welfare event moves from deterministic local detection to evidence-b
 
 ![Animal_Management_C4_Capability-image-04.png](Animal_Management_C4_Capability-assets/Animal_Management_C4_Capability-image-04.png)
 
-| **ARCHITECTURAL INTENT** | AI may identify trends and prioritise investigation. It cannot diagnose, prescribe, suppress an alarm, or authorise treatment or enclosure actions. |
-| --- | --- |
+> **ARCHITECTURAL INTENT** — AI may identify trends and prioritise investigation. It cannot diagnose, prescribe, suppress an alarm, or authorise treatment or enclosure actions.
 
 # 6. AI strategy and guardrails
 
@@ -161,8 +155,7 @@ These are measurable, automatable where possible, and traceable to welfare, resi
 | 3. Governed intelligence | Anomaly detection, selected population counting, evaluation, drift monitoring and feedback. | Provides earlier warnings while retaining human control. |
 | 4. Estate optimisation | Workforce and supply forecasts, approved enclosure status and cross-domain analytics. | Connects welfare outcomes with wider park planning and visitor operations. |
 
-| **FINAL POSITION** | The architecture prioritises welfare, resilience and accountability. It uses AI where outputs can be evaluated and reviewed, while deterministic local controls and qualified staff remain responsible for consequential decisions. |
-| --- | --- |
+> **FINAL POSITION** — The architecture prioritises welfare, resilience and accountability. It uses AI where outputs can be evaluated and reviewed, while deterministic local controls and qualified staff remain responsible for consequential decisions.
 
 ## Source basis
 

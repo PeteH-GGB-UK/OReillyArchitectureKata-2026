@@ -2,8 +2,7 @@
 
 Architecture Kata Capability Submission
 
-| **ARCHITECTURE THESIS** | A resilient event-driven platform turns distributed occupancy, throughput and operational signals into reliable queue estimates, staff tasks and park-wide awareness. AI forecasts demand and recommends responses; duty managers retain control. |
-| --- | --- |
+> **ARCHITECTURE THESIS** — A resilient event-driven platform turns distributed occupancy, throughput and operational signals into reliable queue estimates, staff tasks and park-wide awareness. AI forecasts demand and recommends responses; duty managers retain control.
 
 ## Submission focus
 
@@ -22,8 +21,7 @@ The brief asks the estate to understand how popular different parts of the park 
 
 Crowd pressure and poor visibility of site conditions reduce visitor satisfaction and complicate staffing. The capability provides a consistent view of occupancy, queues, attraction availability and operational incidents, while continuing to collect observations through connectivity disruption.
 
-| **CORE BOUNDARY** | Edge devices observe occupancy and throughput. The Crowd & Site Operations Platform owns queue estimates, operational state, response workflows and published site guidance. |
-| --- | --- |
+> **CORE BOUNDARY** — Edge devices observe occupancy and throughput. The Crowd & Site Operations Platform owns queue estimates, operational state, response workflows and published site guidance.
 
 ## Design principles
 
@@ -53,8 +51,7 @@ Figure 1. C2 containers for crowd sensing, queue estimation, operations workflow
 
 ![Crowd_and_Site_Operations_C4_Capability-image-01.png](Crowd_and_Site_Operations_C4_Capability-assets/Crowd_and_Site_Operations_C4_Capability-image-01.png)
 
-| **ARCHITECTURAL INTENT** | Separates raw observations, estimated queues, operational authority and public guidance. |
-| --- | --- |
+> **ARCHITECTURAL INTENT** — Separates raw observations, estimated queues, operational authority and public guidance.
 
 # 3. C4 Level 3: critical service components
 
@@ -62,8 +59,7 @@ Figure 2. C3 components within the Queue Estimation Service.
 
 ![Crowd_and_Site_Operations_C4_Capability-image-02.png](Crowd_and_Site_Operations_C4_Capability-assets/Crowd_and_Site_Operations_C4_Capability-image-02.png)
 
-| **ARCHITECTURAL INTENT** | Makes count validation, estimation and confidence policy independently testable. |
-| --- | --- |
+> **ARCHITECTURAL INTENT** — Makes count validation, estimation and confidence policy independently testable.
 
 # 4. Deployment and resilience view
 
@@ -71,8 +67,7 @@ Figure 3. Zoned collection and buffering for anonymous site observations.
 
 ![Crowd_and_Site_Operations_C4_Capability-image-03.png](Crowd_and_Site_Operations_C4_Capability-assets/Crowd_and_Site_Operations_C4_Capability-image-03.png)
 
-| **ARCHITECTURAL INTENT** | Supports the brief’s patchy-connectivity constraint without presenting stale observations as current. |
-| --- | --- |
+> **ARCHITECTURAL INTENT** — Supports the brief’s patchy-connectivity constraint without presenting stale observations as current.
 
 # 5. Dynamic view: critical journey
 
@@ -80,8 +75,7 @@ Figure 4. Crowd pressure progresses from observation to approved operational res
 
 ![Crowd_and_Site_Operations_C4_Capability-image-04.png](Crowd_and_Site_Operations_C4_Capability-assets/Crowd_and_Site_Operations_C4_Capability-image-04.png)
 
-| **ARCHITECTURAL INTENT** | Combines deterministic estimates and advisory forecasting with accountable duty-manager decisions. |
-| --- | --- |
+> **ARCHITECTURAL INTENT** — Combines deterministic estimates and advisory forecasting with accountable duty-manager decisions.
 
 # 6. AI strategy and guardrails
 
@@ -162,8 +156,7 @@ Targets are proposed starting points and require validation against operational 
 | 3. Governed forecasting | Demand models, evaluation and recommendation feedback. | Supports earlier intervention. |
 | 4. Estate optimisation | Cross-domain staffing, ride and visitor analytics. | Improves estate-wide coordination. |
 
-| **FINAL POSITION** | The design makes queue information useful without confusing raw sensor readings with truth. Privacy-preserving observations, resilient ingestion and human-approved guidance connect site conditions to park operations. |
-| --- | --- |
+> **FINAL POSITION** — The design makes queue information useful without confusing raw sensor readings with truth. Privacy-preserving observations, resilient ingestion and human-approved guidance connect site conditions to park operations.
 
 ## Source basis
 

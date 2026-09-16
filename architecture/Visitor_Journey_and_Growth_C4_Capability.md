@@ -4,8 +4,7 @@ Visitor Journey & Growth
 
 Architecture Kata Capability Submission
 
-| **ARCHITECTURE THESIS** | A consent-led visitor platform unifies ticketing, family passes, visit planning and measured engagement to make visits easier and support sustainable growth. AI personalises recommendations within explicit privacy, safety and commercial guardrails. |
-| --- | --- |
+> **ARCHITECTURE THESIS** — A consent-led visitor platform unifies ticketing, family passes, visit planning and measured engagement to make visits easier and support sustainable growth. AI personalises recommendations within explicit privacy, safety and commercial guardrails.
 
 ## Submission focus
 
@@ -24,8 +23,7 @@ The brief explicitly asks for ticket sales including family passes, visitor grow
 
 The visitor journey must support purchase, entry, in-visit planning and post-visit engagement without forcing operational systems into a single monolith. The platform creates a reliable commercial and consent record, consumes live estate status and measures whether recommendations improve visits and repeat engagement.
 
-| **CORE BOUNDARY** | The Visitor Platform owns accounts, consent, orders, passes and engagement preferences. Operational capabilities own live ride, queue, animal and site status and share only curated events. |
-| --- | --- |
+> **CORE BOUNDARY** — The Visitor Platform owns accounts, consent, orders, passes and engagement preferences. Operational capabilities own live ride, queue, animal and site status and share only curated events.
 
 ## Design principles
 
@@ -55,8 +53,7 @@ Figure 1. C2 containers for commerce, consent, journey experience and growth.
 
 ![Visitor_Journey_and_Growth_C4_Capability-image-01.png](Visitor_Journey_and_Growth_C4_Capability-assets/Visitor_Journey_and_Growth_C4_Capability-image-01.png)
 
-| **ARCHITECTURAL INTENT** | Keeps commercial and consent records authoritative while consuming operational truth through events. |
-| --- | --- |
+> **ARCHITECTURAL INTENT** — Keeps commercial and consent records authoritative while consuming operational truth through events.
 
 # 3. C4 Level 3: critical service components
 
@@ -64,8 +61,7 @@ Figure 2. C3 components within the Journey Experience API.
 
 ![Visitor_Journey_and_Growth_C4_Capability-image-02.png](Visitor_Journey_and_Growth_C4_Capability-assets/Visitor_Journey_and_Growth_C4_Capability-image-02.png)
 
-| **ARCHITECTURAL INTENT** | Makes consent eligibility, recommendation invocation and safety filtering independently testable. |
-| --- | --- |
+> **ARCHITECTURAL INTENT** — Makes consent eligibility, recommendation invocation and safety filtering independently testable.
 
 # 4. Deployment and resilience view
 
@@ -73,8 +69,7 @@ Figure 3. Visitor channels with a controlled resilient entry path.
 
 ![Visitor_Journey_and_Growth_C4_Capability-image-03.png](Visitor_Journey_and_Growth_C4_Capability-assets/Visitor_Journey_and_Growth_C4_Capability-image-03.png)
 
-| **ARCHITECTURAL INTENT** | Preserves entry during a bounded connectivity interruption without creating a second source of truth. |
-| --- | --- |
+> **ARCHITECTURAL INTENT** — Preserves entry during a bounded connectivity interruption without creating a second source of truth.
 
 # 5. Dynamic view: critical journey
 
@@ -82,8 +77,7 @@ Figure 4. The visitor journey connects purchase, entry, guided experience and co
 
 ![Visitor_Journey_and_Growth_C4_Capability-image-04.png](Visitor_Journey_and_Growth_C4_Capability-assets/Visitor_Journey_and_Growth_C4_Capability-image-04.png)
 
-| **ARCHITECTURAL INTENT** | Shows measurable growth as an outcome of a trusted visit rather than an uncontrolled messaging pipeline. |
-| --- | --- |
+> **ARCHITECTURAL INTENT** — Shows measurable growth as an outcome of a trusted visit rather than an uncontrolled messaging pipeline.
 
 # 6. AI strategy and guardrails
 
@@ -164,8 +158,7 @@ Targets are proposed starting points and require validation against operational 
 | 3. Governed personalisation | Recommendation models, policy filters and evaluation. | Increases relevance without weakening trust. |
 | 4. Growth optimisation | Referrals, campaigns and controlled experiments. | Measures sustainable growth and profitability. |
 
-| **FINAL POSITION** | The design treats a trusted visit as the foundation for growth. Deterministic commerce, explicit consent and operationally correct guidance create a safe base for measured personalisation and repeat engagement. |
-| --- | --- |
+> **FINAL POSITION** — The design treats a trusted visit as the foundation for growth. Deterministic commerce, explicit consent and operationally correct guidance create a safe base for measured personalisation and repeat engagement.
 
 ## Source basis
 
