@@ -5,8 +5,11 @@
 The brief's growth ambition is approximately 5,000 to 15,000 daily visitors; it does not specify concurrent users, sensor rates or service levels.
 
 Define a versioned workload profile for 15,000 daily visitors, including peak arrival rate, concurrent sessions, transaction mix, device count, event rate and payload sizes. Daily attendance alone is not a load-test specification.
+
 Define operating hours, service boundaries, observation windows and exclusions before measuring availability or response times. Report external dependency delays separately without hiding their effect on users.
+
 Test offline, reconnecting and degraded conditions as well as normal operation. Local admission decisions, buffered staff records and central services are distinct measurement boundaries.
+
 Open thresholds are explicitly identified below. They must be agreed before the relevant capability is accepted; they are not assumed to have passed. 
 
 ## 1. Performance and Capacity
