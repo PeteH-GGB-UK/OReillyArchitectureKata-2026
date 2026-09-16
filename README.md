@@ -21,9 +21,9 @@ The central architectural thesis is deliberately conservative about AI: models c
 
 | Assessment area | Where to find the evidence |
 | --- | --- |
-| Business goals, requirements, constraints, risks and assumptions | The six [requirements documents](#requirements) |
-| System context, capability boundaries, deployment views and critical journeys | The five [C4 architecture documents](#capability-architecture) |
-| Architecture decisions, alternatives, consequences and revisit triggers | The standalone [architecture decision records](#architecture-decisions-and-trade-offs) |
+| Business goals, requirements, constraints, risks and assumptions | [requirements documents](#requirements) |
+| System context, capability boundaries, deployment views and critical journeys | [architecture documents](#capability-architecture) |
+| Architecture decisions, alternatives, consequences and revisit triggers | [architecture decision records](#architecture-decisions-and-trade-offs) |
 
 ## Requirements
 
